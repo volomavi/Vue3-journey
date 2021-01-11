@@ -14,10 +14,13 @@ const app = Vue.createApp({
       this.counter = this.counter - num;
     },
     setName(event, lastName) {
-      this.name = event.target.value + " " + lastName;
+      this.name = event.target.value;
     },
     confirmInput() {
       this.confirmedName = this.name;
+    },
+    resetInput() {
+      this.name = "";
     },
   },
 });
