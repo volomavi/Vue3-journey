@@ -1,0 +1,6 @@
+
+//vue's reactivity is based on wrapping everything in proxies
+
+//can create lots of hooks to catch vue in all of its
+//beforeCreate, created, beforeMount, mounted, beforeUpdate, updated etc.
+ also refs are important in referring data only when called
