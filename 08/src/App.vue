@@ -14,6 +14,7 @@
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
         @toggle-favorite="toggleFavoriteStatus"
+        @delete="deleteContact"
       ></friend-contact>
     </ul>
   </section>
@@ -21,7 +22,6 @@
 
 <script>
   export default {
-
     data() {
       return {
         friends: [
@@ -50,7 +50,7 @@
         identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
       },
       addFriend(name, phone, email) {
-        console.log('attempting to add friend')
+        console.log("attempting to add friend");
         const newFriendContact = {
           id: new Date().toISOString(),
           name: name,
@@ -59,6 +59,9 @@
           isFavorite: false,
         };
         this.friends.push(newFriendContact);
+      },
+      deleteContact(friendId) {
+        this.friends = this.friends.filter((friend) => friend.id !== friendId);
       },
     },
   };
