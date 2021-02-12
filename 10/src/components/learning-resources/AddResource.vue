@@ -42,6 +42,11 @@ export default {
       const enteredDescription = this.$refs.descInput.value
       const enteredUrl = this.$refs.linkInput.value
 
+      if (enteredTitle.trim() === '' || enteredDescription.trim() === '' || enteredUrl.trim() === '') {
+        
+        return
+      }
+
       this.addResource(enteredTitle, enteredDescription, enteredUrl)
       // console.log('boom')
       // this.$emit(
