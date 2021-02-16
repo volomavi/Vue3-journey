@@ -9,7 +9,7 @@
         </base-button>
       </header>
       <nav>
-        <a :href="link">View Resource</a>
+        <a @click="urlSwap()" :href="givenUrl">View Resource</a>
       </nav>
     </base-card>
   </li>
@@ -18,7 +18,18 @@
 <script>
 export default {
   props: ['id', 'title', 'description', 'link'],
-  inject: ['deleteResource']
+  inject: ['deleteResource'],
+  data() {
+    return {
+      givenUrl: this.link,
+      subUrl: 'https://github.com/'
+    }
+  },
+  methods: {
+    urlSwap() {
+      this.givenUrl = this.subUrl
+    }
+  }
 };
 </script>
 

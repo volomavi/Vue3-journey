@@ -1,14 +1,14 @@
 <template>
   <base-card>
     <base-button
-      @click="setSelectedTab('stored-resources')"
-      :mode="storedResButtonMode"
-      >Stored Resources</base-button
-    >
-    <base-button
       @click="setSelectedTab('add-resource')"
       :mode="addResButtonMode"
-      >Add Resource</base-button
+      >new URL</base-button
+    >
+    <base-button
+      @click="setSelectedTab('stored-resources')"
+      :mode="storedResButtonMode"
+      >saved URL</base-button
     >
   </base-card>
   <keep-alive>
@@ -73,10 +73,10 @@ export default {
       this.storedResources.unshift(newResource);
       this.selectedTab = 'stored-resources';
     },
-    removeResource(resId){
-      const resIndex = this.storedResources.findIndex(res => res.id === resId)
-      this.storedResources.splice(resIndex, 1)
-    }
+    removeResource(resId) {
+      const resIndex = this.storedResources.findIndex(res => res.id === resId);
+      this.storedResources.splice(resIndex, 1);
+    },
   }
 };
 </script>
