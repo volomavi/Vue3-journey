@@ -14,18 +14,17 @@
         <label for="title">Title</label>
         <input id="title" name="title" type="text" ref="titleInput" />
       </div> -->
-      <div class="form-control">
+      <!-- <div class="form-control">
         <label for="description">Description</label>
         <textarea
           name="description"
           id="description"
-          rows="3"
           ref="descInput"
         ></textarea>
-      </div>
+      </div> -->
       <div class="form-control">
         <label for="link">Link</label>
-        <input name="link" id="link" ref="linkInput" />
+        <input name="link" id="link" ref="linkInput" type="url"/>
       </div>
       <div>
         <base-button type="submit">Add Resource</base-button>
@@ -49,10 +48,10 @@ export default {
   methods: {
     submitData() {
       const enteredTitle = ''
-      const enteredDescription = this.$refs.descInput.value;
-      const enteredUrl = this.$refs.linkInput.value;
+      const enteredDescription = 'http://localhost:8080/'+ Math.random().toString(36).substring(2, 5)
+      const enteredUrl = this.$refs.linkInput.value
 
-      
+      // const enteredUrl = 'http://localhost:8080/'+ Math.random().toString(36).substring(2, 5)
 
       this.addResource(enteredTitle, enteredDescription, enteredUrl);
     },

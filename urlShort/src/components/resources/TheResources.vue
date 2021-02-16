@@ -32,13 +32,13 @@ export default {
         {
           id: 'official-guide',
           title: 'Official Guide',
-          description: 'The official Vue.js documentation',
+          description: 'http://localhost:8080/abc',
           link: 'https://vuejs.org'
         },
         {
           id: 'google',
           title: 'Google',
-          description: 'Learn to google',
+          description: 'http://localhost:8080/123',
           link: 'https://google.com'
         }
       ]

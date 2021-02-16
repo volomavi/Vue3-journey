@@ -2,14 +2,14 @@
   <li>
     <base-card>
       <header>
-        <p>{{ description }}</p>
+        <p>{{ link }}</p>
 
         <base-button mode="flat" @click="deleteResource(id)">
           Delete
         </base-button>
       </header>
       <nav>
-        <a @click="urlSwap()" :href="givenUrl">View Resource</a>
+        <a @click="urlSwap()" :href="givenUrl">{{description}}</a>
       </nav>
     </base-card>
   </li>
@@ -21,8 +21,8 @@ export default {
   inject: ['deleteResource'],
   data() {
     return {
-      givenUrl: this.link,
-      subUrl: 'https://github.com/'
+      givenUrl: this.description,
+      subUrl: this.link
     }
   },
   methods: {
