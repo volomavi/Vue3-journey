@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historical Quiz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="start" v-if="!quizStarted">
+        <h1>Which Historical Figure Are You?</h1>
+        <div class="start-box">
+          <input
+            type="text"
+            placeholder="Please enter your name."
+            v-model="userName"
+          />
+          <button @click="startQuiz">Start Quiz!</button>
+        </div>
+      </div>
+      <!-- <the-header v-if="quizStarted"></the-header> -->
+      <quiz v-if="quizStarted"></quiz>
+    </div>
+  </body>
+</html>
+
+<script src="./main.js"></script>
+
+<script src="./components/TheHeader.js"></script>
+<script src="./components/Quiz.js"></script>
+<script src="./components/Data.js"></script>
+<script>
+  const mountedApp = app.mount("#app");
+</script>
+
