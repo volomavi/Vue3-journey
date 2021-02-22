@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      userName: '',
+      username: '',
       quizStarted: false
     };
   },
@@ -11,4 +11,8 @@ const app = Vue.createApp({
       this.quizStarted = true
     }
   },
+  provide() {
+    return {
+    }
+  }
 });

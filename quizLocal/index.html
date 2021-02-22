@@ -19,23 +19,19 @@
           <input
             type="text"
             placeholder="Please enter your name."
-            v-model="userName"
+            v-model="username"
           />
           <button @click="startQuiz">Start Quiz!</button>
         </div>
       </div>
-      <!-- <the-header v-if="quizStarted"></the-header> -->
-      <quiz v-if="quizStarted"></quiz>
+      <quiz :username="username" v-if="quizStarted"></quiz>
     </div>
   </body>
 </html>
 
 <script src="./main.js"></script>
 
-<script src="./components/TheHeader.js"></script>
 <script src="./components/Quiz.js"></script>
-<script src="./components/Data.js"></script>
 <script>
   const mountedApp = app.mount("#app");
 </script>
-
