@@ -124,6 +124,8 @@ export default {
   methods: {
     submitForm() {
       console.log(this.userName);
+      console.log(this.rating)
+      this.rating = null
     },
     validateInput(){
       if (this.userName === '') {
